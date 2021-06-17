@@ -1,14 +1,14 @@
-from paho.mqtt import client as mqtt_client
 import random
 import time
 
+from paho.mqtt import client as mqtt_client
 
-broker = ''
+broker = 'm16.cloudmqtt.com'
 port = 15372
 topic = 'outTopic'
 client_id = f'python-mqtt-{random.randint(0, 1000)}'
-username = ''
-password = ''
+username = 'dwvkqzpd'
+password = 'uEzJFy5rb_Ra'
 
 def connect_mqtt():
     def on_connect(client, userdata, flags, rc):
@@ -36,13 +36,6 @@ def publish(client):
         else:
             print(f'failed to send message to topic {topic}')
         msg_count += 1
-
-# def subscribe(client: mqtt_client):
-#     def on_message(client, userdata, msg):
-#         print(f'Received {msg.payload.decode()} from {msg.topic} topic')
-
-#     client.subscribe(topic)
-#     client.on_message = on_message
 
 def run():
     client = connect_mqtt()
