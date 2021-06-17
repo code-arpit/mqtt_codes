@@ -15,7 +15,7 @@ def connect_mqtt():
         if rc == 0:
             print('Connected to Mqtt Broker!')
         else:
-            print('ailed to connect, return code %d\n', rc)
+            print('Failed to connect, return code %d\n', rc)
     
     #connecting to client id
     client = mqtt_client.Client(client_id)
@@ -28,7 +28,8 @@ def publish(client):
     msg_count = 0
     while(True):
         time.sleep(1)
-        msg = f'messages: {msg_count}'
+        # msg = f'messages: {msg_count}'
+        msg = 'afcsevrbvtbfiehbcuge'
         result = client.publish(topic, msg)
         status = result[0]
         if status == 0:
